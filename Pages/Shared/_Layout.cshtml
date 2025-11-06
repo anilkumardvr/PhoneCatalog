@@ -1,0 +1,40 @@
+@{
+    var title = "Weirdo's mobile website";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@title</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-dark">
+    <div id="cursor-orb"></div>
+    <header class="site-header">
+        <h1 class="brand">@title</h1>
+        <nav>
+            <a asp-page="/Index">Home</a>
+            <a asp-page="/Phones/Index">Phones</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="social">
+            <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://x.com" target="_blank" rel="noopener">X (Twitter)</a>
+        </div>
+        <div>© @DateTime.Now.Year Weirdo’s</div>
+    </footer>
+
+    <script src="~/js/site.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
